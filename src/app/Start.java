@@ -9,6 +9,7 @@ import com.jfoenix.controls.JFXDrawer.DrawerDirection;
 import app.controller.CContent;
 import app.controller.CDrawerContent;
 import app.controller.CMain;
+import app.test.JavaKeywordsDemo;
 import app.view.function.IWindowMax;
 import app.view.function.ResizeHelper;
 import app.view.function.StageVerschiebenMitAnchorPane;
@@ -49,6 +50,7 @@ public class Start extends Application implements IWindowMax {
 	        
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(Start.class.getResource("/app/view/css/MainStyle.css").toExternalForm());
+			scene.getStylesheets().add(Start.class.getResource("/app/view/css/java-keywords.css").toExternalForm());
 
 			controllerMain = loaderRoot.getController();
 			controllerMain.set(this, primaryStage);
@@ -62,7 +64,6 @@ public class Start extends Application implements IWindowMax {
 			// Set content in DrawersStack
 			this.drawersStack = controllerMain.getDrawersStack();
 			drawersStack.setContent(content);
-			
 			
 			setWindowMaxMitDoppelKlick(primaryStage, controllerMain.getButtonWindowMax(), root, root, hasShadowPane);
 			new StageVerschiebenMitAnchorPane(root, root, controllerMain.getButtonWindowMax(), primaryStage, false);
@@ -94,8 +95,8 @@ public class Start extends Application implements IWindowMax {
 
     private JFXDrawer addContentInDrawer(AnchorPane drawerContent) {
     	JFXDrawer drawer = new JFXDrawer();
-        drawer.setDirection(DrawerDirection.RIGHT);
-        drawer.setDefaultDrawerSize(500);
+        drawer.setDirection(DrawerDirection.LEFT);
+        drawer.setDefaultDrawerSize(300);
         drawer.setSidePane(drawerContent);
         drawer.setOverLayVisible(false);
         drawer.setResizableOnDrag(true);
@@ -106,6 +107,7 @@ public class Start extends Application implements IWindowMax {
     // Getter 
 	public CMain getControllerDrawersStack() {return controllerMain;}
 	public JFXDrawer getDrawer() {return drawer;}
+	public JFXDrawersStack getDrawersStack() {return drawersStack;}
 
 	public static void main(String[] args) {
         launch(args);

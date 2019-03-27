@@ -1,19 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="contentAnchorPane" fx:id="shadowPane" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../css/MainStyle.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.CContent">
    <children>
-      <VBox alignment="CENTER" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <VBox layoutX="10.0" layoutY="10.0" prefWidth="450.0" spacing="20.0">
          <children>
-            <Button fx:id="buttonDrawer" mnemonicParsing="false" text="Drawer open/close" />
-            <Button fx:id="buttonNotiBottomRight" mnemonicParsing="false" text="Notification Bottom right" />
-            <Button fx:id="buttonNotiBottomLeft" mnemonicParsing="false" text="Notification Bottom left" />
-            <Button fx:id="buttonNotiPaneTop" mnemonicParsing="false" text="Notification Pane Top" />
-            <Button fx:id="buttonNotiPaneBottom" mnemonicParsing="false" text="Notification Pane Bottom" />
+            <AnchorPane>
+               <children>
+                  <TextField id="textFieldVorname" fx:id="textFieldBezeichnung" prefHeight="40.0" promptText="Vorname" styleClass="controlsFilter" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="54.0">
+                     <tooltip>
+                        <Tooltip text="Vorname" />
+                     </tooltip>
+                  </TextField>
+                  <Button id="buttonStyleWeissRot" fx:id="buttonRemoveBezeichnung" mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" styleClass="font-size-17px" text="X" AnchorPane.rightAnchor="5.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="entfernen" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane>
+               <children>
+                  <Label id="labelFilter" text="Gemeinde" textFill="WHITE" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox id="comboBoxGemeinde" fx:id="comboBoxKategorie" prefHeight="40.0" prefWidth="256.0" promptText="bitte wählen..." AnchorPane.rightAnchor="54.0">
+                     <styleClass>
+                        <String fx:value="input" />
+                        <String fx:value="controlsFilter" />
+                     </styleClass>
+                  </ComboBox>
+                  <Button id="buttonStyleWeissRot" fx:id="buttonRemoveKategorie" mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" styleClass="font-size-17px" text="X" AnchorPane.rightAnchor="5.0">
+                     <tooltip>
+                        <Tooltip text="entfernen" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </AnchorPane>
          </children>
       </VBox>
+      <AnchorPane layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="473.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <TableView fx:id="tableViewApps" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="tableColumnBezeichnung" prefWidth="300.0" text="Bezeichnung" />
+                  <TableColumn fx:id="tableColumnKategorie" prefWidth="200.0" text="Kategorie" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
