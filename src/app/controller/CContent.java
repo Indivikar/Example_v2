@@ -1,5 +1,6 @@
 package app.controller;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
@@ -11,6 +12,7 @@ import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXDrawersStack;
 
 import app.Start;
+import app.examples.HelloWorld;
 import app.functions.ReadExamplesFolder;
 import app.models.App;
 import app.view.function.IWindowMax;
@@ -18,6 +20,7 @@ import app.view.function.MyNotification;
 import app.view.function.MyNotification.MyNotificationGraphic;
 import app.view.function.MyNotificationPane;
 import app.view.function.MyNotificationPane.MyNotificationPaneGraphic;
+import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -53,6 +56,7 @@ public class CContent implements Initializable, IWindowMax {
 	private MyNotification notification;
 	private MyNotificationPane notificationPane;
 	
+	private App selectedItem;
 	private ObservableList<App> dataAppMaster = FXCollections.observableArrayList();
 	
 	@FXML private AnchorPane shadowPane;
@@ -111,60 +115,13 @@ public class CContent implements Initializable, IWindowMax {
     	    @Override 
     	    public void handle(MouseEvent event) {
     	        if (event.isPrimaryButtonDown() && event.getClickCount() == 1) {
+    	        	App selItem = tableViewApps.getSelectionModel().getSelectedItem();
+    	        	start.getControllerDrawerContent().setSelectedItem(selItem);
     	        	
-//    	        	start.getControllerDrawerContent().setDaten(tableViewDokumente.getSelectionModel().getSelectedItem());
-    	        	
-//    	        	Class c = null;
-//					try {
-//						c = Class.forName("app.examples.Events.MousePosition.DrawLineOnMouseDragDemo");
-//					} catch (ClassNotFoundException e1) {
-//						// TODO Auto-generated catch block
-//						e1.printStackTrace();
-//					} 
-//    	        	Method m = null;
-//					try {
-//						m = c.getMethod("main", String.class, String.class, String.class);
-//					} catch (NoSuchMethodException | SecurityException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					} //The method has 3 String paramaters so I have to intialize it otherwise it will produce an error that the method was not found.
-//    	        	Object t = null;
-//					try {
-//						t = c.newInstance();
-//					} catch (InstantiationException | IllegalAccessException e1) {
-//						// TODO Auto-generated catch block
-//						e1.printStackTrace();
-//					}
-//    	        	try {
-//						m.invoke(t, "Hallo");
-//					} catch (IllegalAccessException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					} catch (IllegalArgumentException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					} catch (InvocationTargetException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					} //Now invoke the method with the value or paramaters.
-    	        	
-					String className = "app.examples.Events.MousePosition.DrawLineOnMouseDragDemo";
-					try {
-						Class<T> c = (Class<T>) Class.forName(className);
-						T castToT = c.cast("main");
-					} catch (ClassNotFoundException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+    	        	if (drawer.isClosed()) {
+    	        		drawersStack.toggle(drawer);
 					}
-					
     	        	
-//    	        	if (drawer.isClosed()) {
-//    	        		drawersStack.toggle(drawer);
-//					}
-    	        	
-//    	            System.out.println(tableViewDokumente.getSelectionModel().getSelectedItem().getDokument());  
-//    	            System.out.println(tableViewDokumente.getSelectionModel().getSelectedItem().getVorname());
-//    	            System.out.println(tableViewDokumente.getSelectionModel().getSelectedItem().getNachname());
     	        }
     	    }
     	}); 
@@ -247,6 +204,7 @@ public class CContent implements Initializable, IWindowMax {
 	
 	
 	// Getter
+	public App getSelectedItem() {return selectedItem;}
 	public Button getButtonWindowMax() {return buttonWindowMax;}
 	
 	// Setter

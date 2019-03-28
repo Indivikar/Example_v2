@@ -1,5 +1,6 @@
 package app.functions;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
@@ -14,6 +15,7 @@ import javafx.collections.ObservableList;
 
 public class ReadExamplesFolder {
 
+	private Path demoFile;
 	private ObservableList<App> appsList = FXCollections.observableArrayList();
 	
 	
@@ -39,7 +41,8 @@ public class ReadExamplesFolder {
 					String[] part = splitString(path, dir);
 					
 					if (part != null && part.length == 3) {
-						appsList.add(new App(part[2], part[1], "startFile") );
+						appsList.add(new App(part[2], part[1], 
+								getDemoFile(dir).toString()) );
 					}
 //					String className = "com.mycompany.Foo";
 //					Class<T> c = Class.forName(className);
@@ -54,6 +57,44 @@ public class ReadExamplesFolder {
 			e.printStackTrace();
 		}
 	
+	}
+	
+	
+	private Path getDemoFile(Path dir) {
+		demoFile = new File("").toPath();
+		
+		try {
+			Files.walkFileTree(dir, new SimpleFileVisitor<Path>() {
+				@Override
+				public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+					if (file.toFile().getName().contains("Demo") && !file.toFile().getName().endsWith("$1.class")) {
+//						System.out.println("file: " + file);
+						demoFile = file;
+						System.out.println("demoFile: " + demoFile);
+					}
+
+					return FileVisitResult.CONTINUE;					
+				}
+
+			});
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+//		File[] files = dir.toFile().listFiles();
+//		if (files != null) { // Erforderliche Berechtigungen etc. sind vorhanden
+//			for (int i = 0; i < files.length; i++) {
+//				if (!files[i].isDirectory() && files[i].getName().contains("Demo")) {
+//					System.out.println(files[i]);
+//					return files[i].toPath();
+//				}
+//			}
+//		}
+		
+		return demoFile;
 	}
 	
 //	private <T> void myClass() {

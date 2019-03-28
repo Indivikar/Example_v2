@@ -13,7 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.StackPaneBuilder;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -23,7 +22,7 @@ public class MaskAnimationDemo extends Application {
 	Stage stage;
 	Scene scene;
 	StackPane root;
-//	static StackPane mask = StackPaneBuilder.create().style("-fx-cursor:wait;").visible(false).build();
+	static StackPane mask = StackPaneBuilder.create().style("-fx-cursor:wait;").visible(false).build();
 	static Timeline maskTimeLine;
 	
 	public static void main(String[] args) {

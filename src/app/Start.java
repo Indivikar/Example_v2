@@ -96,7 +96,7 @@ public class Start extends Application implements IWindowMax {
     private JFXDrawer addContentInDrawer(AnchorPane drawerContent) {
     	JFXDrawer drawer = new JFXDrawer();
         drawer.setDirection(DrawerDirection.LEFT);
-        drawer.setDefaultDrawerSize(300);
+        drawer.setDefaultDrawerSize(500);
         drawer.setSidePane(drawerContent);
         drawer.setOverLayVisible(false);
         drawer.setResizableOnDrag(true);
@@ -106,6 +106,9 @@ public class Start extends Application implements IWindowMax {
     
     // Getter 
 	public CMain getControllerDrawersStack() {return controllerMain;}
+	public CContent getControllerContent() {return controllerContent;}
+	public CMain getControllerMain() {return controllerMain;}
+	public CDrawerContent getControllerDrawerContent() {return controllerDrawerContent;}
 	public JFXDrawer getDrawer() {return drawer;}
 	public JFXDrawersStack getDrawersStack() {return drawersStack;}
 

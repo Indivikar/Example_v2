@@ -1,5 +1,7 @@
 package app.examples.Events.MousePosition;
+
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -21,15 +23,28 @@ public class DrawLineOnMouseDragDemo extends Application {
      
     Path path;
  
-    /**
-     * @param args the command line arguments
-     */
+    public DrawLineOnMouseDragDemo() {
+		Platform.runLater(() -> {           
+	           start(new Stage());		       
+		});
+	}
+
     public static void main(String[] args) {
         launch(args);
     }
      
+    public void show(String[] args) {
+    	Platform.runLater(() -> {
+    		new DrawLineOnMouseDragDemo().start(new Stage());
+    	});	
+	}
+    
     @Override
     public void start(Stage primaryStage) {
+    	System.out.println("Start");
+    	
+    	
+    	
         primaryStage.setTitle("java-buddy.blogspot.com");
         Group root = new Group();
         Scene scene = new Scene(root, 300, 250);
