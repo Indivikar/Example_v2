@@ -1,8 +1,9 @@
-package DragAndDrop.SortRowsInTableView;
+package app.examples.DragAndDrop.SortRowsInTableView;
 
 import java.util.function.Function;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.ObservableValue;
@@ -18,10 +19,16 @@ import javafx.scene.input.TransferMode;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class TableViewDragRows extends Application {
+public class TableViewDragRowsDemo extends Application {
 
     private static final DataFormat SERIALIZED_MIME_TYPE = new DataFormat("application/x-java-serialized-object");
 
+    public TableViewDragRowsDemo() {
+		Platform.runLater(() -> {           
+	           start(new Stage());		       
+		});
+	}
+    
     @Override
     public void start(Stage primaryStage) {
         TableView<Person> tableView = new TableView<>();

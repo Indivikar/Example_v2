@@ -1,0 +1,1 @@
+Wenn eine Zelle verschoben wird, bekommt man den "Cell row index" und "Cell column index" zurück

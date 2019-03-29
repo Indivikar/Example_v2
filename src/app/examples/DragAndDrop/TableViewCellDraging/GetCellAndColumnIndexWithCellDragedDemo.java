@@ -1,6 +1,7 @@
-package DragAndDrop.TableViewCellDraging;
+package app.examples.DragAndDrop.TableViewCellDraging;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,10 +12,16 @@ import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class GetCellAndColumnIndexWithCellDraged extends Application {
+public class GetCellAndColumnIndexWithCellDragedDemo extends Application {
 
 	// Wenn Zelle verschoben wird, bekommt man den "Cell row index" und "Cell column index" zurück
 
+	public GetCellAndColumnIndexWithCellDragedDemo() {
+		Platform.runLater(() -> {           
+	           start(new Stage());		       
+		});
+	}
+	
 
     @Override
     public void start(Stage stage) {
