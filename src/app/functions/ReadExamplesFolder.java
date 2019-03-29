@@ -23,7 +23,7 @@ public class ReadExamplesFolder {
 		
 		appsList.clear();
 		
-		PfadErmitteln pe = new PfadErmitteln(new String[] {"app", "examples"}, true, false);
+		PfadErmitteln pe = new PfadErmitteln(new String[] {"app", "example"}, true, false);
 		Path path = pe.getErmittelterPath();
 		System.out.println(path);
 		

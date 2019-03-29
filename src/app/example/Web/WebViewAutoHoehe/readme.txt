@@ -1,0 +1,1 @@
+Die Höhe vom Mittelteil(StackPane) wird automatisch an den Text angepasst.

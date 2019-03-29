@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="shadowPane" fx:id="shadowPane" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.example.DragAndDrop.DragFrom3TablesTo1Table.controller.ControllerNewSitzung">
+   <children>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="40.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <VBox maxWidth="700.0" minWidth="400.0" prefWidth="1000.0" spacing="10.0">
+               <children>
+                  <HBox>
+                     <children>
+                        <TextField fx:id="textFieldSucheSignatur" minWidth="95.0" prefWidth="95.0" promptText="suche Signatur" />
+                        <TextField fx:id="textFieldSucheTraktandum" prefWidth="250.0" promptText="suche Traktandum">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <VBox spacing="15.0">
+                     <children>
+                        <Accordion fx:id="accordionImmerAnzeigen">
+                          <panes>
+                            <TitledPane fx:id="titledPaneImmer" animated="false" style="-fx-box-border: transparent;">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="5000.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="tableViewImmerAnzeigen" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="-10.0">
+                                            <columns>
+                                              <TableColumn fx:id="columnSignaturImmerAnzeigen" prefWidth="75.0" resizable="false" text="Signatur" />
+                                              <TableColumn fx:id="columnTraktandumImmerAnzeigen" prefWidth="320.0" text="Traktandum" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                                 <graphic>
+                                    <AnchorPane fx:id="anchorPaneTitleImmerAnzeigen" prefHeight="25.0" prefWidth="250.0">
+                                       <children>
+                                          <Label text="Traktanten - immer anzeigen" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="0.0" />
+                                          <HBox alignment="CENTER" AnchorPane.rightAnchor="0.0">
+                                             <children>
+                                                <CheckBox fx:id="checkBoxSucheImmerAnzeigen" mnemonicParsing="false" />
+                                                <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/search-21px.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </graphic>
+                            </TitledPane>
+                          </panes>
+                        </Accordion>
+                        <Accordion>
+                          <panes>
+                            <TitledPane fx:id="titledPaneAlle" animated="false" style="-fx-box-border: transparent;">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="5000.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="tableViewAlle" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="-10.0">
+                                             <columns>
+                                                <TableColumn fx:id="columnSignaturAlle" prefWidth="75.0" resizable="false" text="Signatur" />
+                                                <TableColumn fx:id="columnTraktandumAlle" prefWidth="250.0" text="Traktandum" />
+                                                <TableColumn fx:id="columnZuletztInAlle" minWidth="150.0" prefWidth="150.0" text="zuletzt in Sitzung" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                                 <graphic>
+                                    <AnchorPane fx:id="anchorPaneTitleAlle" prefHeight="25.0" prefWidth="250.0">
+                                       <children>
+                                          <Label text="Traktanten - Alle" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="0.0" />
+                                          <HBox alignment="CENTER" AnchorPane.rightAnchor="0.0">
+                                             <children>
+                                                <CheckBox fx:id="checkBoxSucheAlle" mnemonicParsing="false" />
+                                                <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/search-21px.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </graphic>
+                            </TitledPane>
+                          </panes>
+                        </Accordion>
+                        <Accordion>
+                           <panes>
+                              <TitledPane fx:id="titledPaneZuletzt" animated="false" style="-fx-box-border: transparent;">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="5000.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="tableViewZuletztErstellt" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="-10.0">
+                                            <columns>
+                                              <TableColumn fx:id="columnSignaturZuletztErstellt" prefWidth="75.0" resizable="false" sortable="false" text="Signatur" />
+                                              <TableColumn fx:id="columnTraktandumZuletztErstellt" prefWidth="320.0" sortable="false" text="Traktandum" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                                 <graphic>
+                                    <AnchorPane fx:id="anchorPaneTitleZuletztErstellt" prefWidth="250.0">
+                                       <children>
+                                          <Label text="Traktanten - zuletzt erstellt" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="0.0" />
+                                          <HBox alignment="CENTER" AnchorPane.rightAnchor="0.0">
+                                             <children>
+                                                <Spinner fx:id="spinnerZuletztErstellt" editable="true" prefWidth="60.0" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </graphic>
+                              </TitledPane>
+                           </panes>
+                        </Accordion>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
+               </children>
+            </VBox>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label alignment="CENTER" text="&lt; ----- &gt;" textAlignment="CENTER" />
+                        <Label maxWidth="150.0" text="Hier nur die Traktanden anzeigen lassen, die in dem ausgewählten Register, im Tab Sitzungen, stehen" wrapText="true" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <VBox maxWidth="700.0" minWidth="300.0" prefWidth="1000.0">
+               <children>
+                  <Label text="Traktandenliste für Sitzung" />
+                  <TableView fx:id="tableViewTraktandenListe" prefHeight="5000.0" prefWidth="1000.0">
+                    <columns>
+                      <TableColumn fx:id="columnSignaturTraktandenListe" prefWidth="75.0" resizable="false" text="Signatur" />
+                      <TableColumn fx:id="columnTrakandumTraktandenListe" prefWidth="270.0" text="Traktandum" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -12,7 +12,7 @@ import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXDrawersStack;
 
 import app.Start;
-import app.examples.HelloWorld;
+import app.example.HelloWorld;
 import app.functions.ReadExamplesFolder;
 import app.models.App;
 import app.view.function.IWindowMax;
@@ -118,16 +118,36 @@ public class CContent implements Initializable, IWindowMax {
 	            protected void updateItem(String item, boolean empty) {
 	                super.updateItem(item, empty);
 
-	                setText(empty ? "" : getItem().toString());
-	                setGraphic(null);
-
-	                if (!isEmpty()) {
-		                TableRow<App> currentRow = getTableRow();
-		                String startFile = currentRow.getItem().getStartFile();
-		                if (startFile == null || startFile.isEmpty()) {
-							currentRow.setStyle("-fx-background-color:lightcoral");
-						}		                
+	                if (item == null || empty) {
+	                    setText(null);
+	                    setGraphic(null);
+	                } else {
+	                	setText(getItem().toString());
+	                	setGraphic(null);
+	                	Platform.runLater(() -> {
+		                	TableRow<App> currentRow = getTableRow();
+		                	App appItem = currentRow.getItem();
+		                	if (appItem != null) {
+								String startFile = appItem.getStartFile();
+				                if (startFile == null || startFile.isEmpty()) {
+									currentRow.setStyle("-fx-background-color:lightcoral");
+								}	
+							}			               
+	                	});	      	                	
 	                }
+	                
+//	                setText(empty ? "" : getItem().toString());
+//	                setGraphic(null);
+//
+//	                if (!isEmpty()) {
+//	                	Platform.runLater(() -> {
+//		                	TableRow<App> currentRow = getTableRow();
+//			                String startFile = currentRow.getItem().getStartFile();
+//			                if (startFile == null || startFile.isEmpty()) {
+//								currentRow.setStyle("-fx-background-color:lightcoral");
+//							}	
+//	                	});	                
+//	                }
 	            }
 	        };
 	    });
