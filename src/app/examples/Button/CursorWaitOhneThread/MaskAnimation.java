@@ -13,11 +13,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.StackPaneBuilder;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class MaskAnimationDemo extends Application {
+public class MaskAnimation extends Application {
 
 	Stage stage;
 	Scene scene;

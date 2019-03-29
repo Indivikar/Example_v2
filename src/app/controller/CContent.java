@@ -36,6 +36,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -110,6 +111,26 @@ public class CContent implements Initializable, IWindowMax {
 		
 		tableColumnBezeichnung.setCellValueFactory(new PropertyValueFactory<App, String>("bezeichnung"));
 		tableColumnKategorie.setCellValueFactory(new PropertyValueFactory<App, String>("kategorie"));
+		
+		tableColumnBezeichnung.setCellFactory(column -> {
+	        return new TableCell<App, String>() {
+	            @Override
+	            protected void updateItem(String item, boolean empty) {
+	                super.updateItem(item, empty);
+
+	                setText(empty ? "" : getItem().toString());
+	                setGraphic(null);
+
+	                if (!isEmpty()) {
+		                TableRow<App> currentRow = getTableRow();
+		                String startFile = currentRow.getItem().getStartFile();
+		                if (startFile == null || startFile.isEmpty()) {
+							currentRow.setStyle("-fx-background-color:lightcoral");
+						}		                
+	                }
+	            }
+	        };
+	    });
 		
 		tableViewApps.setOnMousePressed(new EventHandler<MouseEvent>() {
     	    @Override 

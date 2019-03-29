@@ -1,0 +1,1 @@
+Hier ein kleines Beispiel, wie man die Text-Höhe auslesen kann

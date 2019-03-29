@@ -38,6 +38,10 @@ public class ReadExamplesFolder {
 				@Override
 				public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
 
+					if (dir.toString().contains("xxxGehtNichtxxx")) {
+						return FileVisitResult.CONTINUE;
+					}
+					
 					String[] part = splitString(path, dir);
 					
 					if (part != null && part.length == 3) {

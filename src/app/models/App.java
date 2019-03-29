@@ -102,7 +102,14 @@ public class App {
 	public void setBezeichnung(String bezeichnung) {this.bezeichnung.set(bezeichnung);}
 	public void setKategorie(String kategorie) {this.kategorie.set(kategorie);}
 	public void setStartFile(String startFile) {this.kategorie.set(startFile);}
+//	public void setStartFile(String startFile) {		
+//		if (startFile == null || startFile.isEmpty()) {
+//			this.kategorie.set("null");
+//		} else {
+//			this.kategorie.set(startFile);
+//		}		
+//	}
 //	public void setClassName(String className) {this.className.set(className);}
-	public void setReadMe(String readMe) {this.readMe.set(readMe);}
+//	public void setReadMe(String readMe) {this.readMe.set(readMe);}
 //	public void setSourceCode(String sourceCode) {this.sourceCode.set(sourceCode);}
 }
