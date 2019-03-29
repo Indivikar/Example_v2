@@ -52,14 +52,19 @@ public class App {
 			String parent = file.getParent();
 			File readmeFile = new File(parent + File.separator + "readme.txt");
 			System.out.println("setReadme: " + readmeFile);
-			try {
-				String content = new String(Files.readAllBytes(Paths.get(readmeFile.toURI())));
-				return content;
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			if (readmeFile.exists()) {
+				try {
+					String content = new String(Files.readAllBytes(Paths.get(readmeFile.toURI())));
+					return content;
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					return "";
+				}
+			} else {
 				return "";
 			}
+
 			
 //			PfadErmitteln pe = new PfadErmitteln(new String[] {}, true, false);
 //			String newString = parent.replace(pe.getErmittelterFile().getAbsolutePath(), "");
@@ -70,6 +75,7 @@ public class App {
 		} else {
 			return "";
 		}
+		
 	}
 	
 	private String setSourceCode(String startFile) {

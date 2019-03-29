@@ -38,7 +38,7 @@ public class ReadExamplesFolder {
 				@Override
 				public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
 
-					if (dir.toString().contains("xxxGehtNichtxxx")) {
+					if (dir.toString().contains("GehtNicht") || dir.toString().contains("gehtNicht") || dir.toString().contains("gehtnicht")) {
 						return FileVisitResult.CONTINUE;
 					}
 					

@@ -1,0 +1,2 @@
+- Bettet jQuery in ein Dokument ein, das in eine WebView geladen wurde.
+- Verwendet jQuery, um eine Animation auszuführen, um jeden Link im Dokument auszublenden, wenn darauf geklickt wird.
