@@ -1,0 +1,24 @@
+.pane{
+	-fx-background-color: white;
+}
+
+.navigation-button{
+    -fx-font-size: 0.9em;
+    -fx-background-color: transparent;
+    -fx-graphic-text-gap: 0px;
+    -fx-text-fill: transparent;
+}
+
+
+.navigationPane:hover > .navigation-button{
+	-fx-text-fill: black;
+}
+
+.navigationPane:hover > .navigation-button:pressed:hover{
+	-fx-effect: dropshadow(three-pass-box, derive(red, -5%), 7, 0.2, 0, 1);
+    -fx-text-fill: red;
+}
+
+.navigation-button:hover{
+	-fx-effect: dropshadow(three-pass-box, derive(cadetblue, -5%), 7, 0.2, 0, 1);    
+}
