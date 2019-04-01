@@ -1,9 +1,10 @@
-package Animation.SliderRechteSeite;
+package app.example.Animation.SliderRechteSeite;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -13,27 +14,23 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.GroupBuilder;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.LabelBuilder;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.HBoxBuilder;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.StackPaneBuilder;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
-import javafx.scene.shape.PathBuilder;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import com.javafx.experiments.scenicview.ScenicView;
+//import com.javafx.experiments.scenicview.ScenicView;
 import com.sun.javafx.scene.traversal.Direction;
 
 public class SlideToLeftDemo extends Application {
@@ -52,6 +49,17 @@ public class SlideToLeftDemo extends Application {
 	private SimpleStringProperty btnTxt = new SimpleStringProperty("Show Last Contact Letter");
 	private SimpleDoubleProperty arrowRotate = new SimpleDoubleProperty(180);
 	
+	public SlideToLeftDemo() {
+		Platform.runLater(() -> {           
+	        try {
+				start(new Stage());
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}		       
+		});
+	}
+	
 	public static void main(String[] args) {
 		Application.launch(args);
 	}
@@ -60,12 +68,30 @@ public class SlideToLeftDemo extends Application {
 	public void start(Stage stage) throws Exception {
 		this.stage = stage;
 		this.root = new BorderPane();
-		this.root.setPadding(new Insets(20));
-		this.root.setTop(StackPaneBuilder.create().style("-fx-border-color:red;-fx-border-width:1px;-fx-background-color:white;").padding(new Insets(0,0,10,0)).prefHeight(100).build());
-		this.root.setLeft(StackPaneBuilder.create().style("-fx-border-color:red;-fx-border-width:1px;-fx-background-color:white;").prefWidth(200).build());
-		this.root.setBottom(StackPaneBuilder.create().style("-fx-border-color:red;-fx-border-width:1px;-fx-background-color:white;").padding(new Insets(10,0,0,0)).prefHeight(50).build());
 		
-		centerContainer = StackPaneBuilder.create().style("-fx-background-color:white;").build();
+		StackPane stackPaneTop = new StackPane();
+		stackPaneTop.setStyle("-fx-border-color:red;-fx-border-width:1px;-fx-background-color:white;");
+		stackPaneTop.setPadding(new Insets(0,0,10,0));
+		stackPaneTop.setPrefHeight(100);
+		
+		StackPane stackPaneLeft = new StackPane();
+		stackPaneTop.setStyle("-fx-border-color:red;-fx-border-width:1px;-fx-background-color:white;");
+		stackPaneTop.setPrefWidth(200);
+		
+		StackPane stackPaneBottom = new StackPane();
+		stackPaneTop.setStyle("-fx-border-color:red;-fx-border-width:1px;-fx-background-color:white;");
+		stackPaneTop.setPadding(new Insets(10,0,0,0));
+		stackPaneTop.setPrefHeight(50);
+		
+		this.root.setPadding(new Insets(20));
+		this.root.setTop(stackPaneTop);
+		this.root.setLeft(stackPaneLeft);
+		this.root.setBottom(stackPaneBottom);
+		
+		StackPane stackPaneCenter = new StackPane();
+		stackPaneTop.setStyle("-fx-background-color:white;");
+		
+		centerContainer = stackPaneCenter;
 		this.root.setCenter(centerContainer);
 		
 		this.scene = new Scene(this.root);
@@ -74,7 +100,7 @@ public class SlideToLeftDemo extends Application {
 	    stage.setHeight(600);
 	    stage.setScene(this.scene);
 	    stage.show();
-	    ScenicView.show(scene);
+//	    ScenicView.show(scene);
 	    
 	    configureSlide();
 	}
@@ -83,28 +109,46 @@ public class SlideToLeftDemo extends Application {
 		patientView =  new StackPane();
 		patientView.setStyle("-fx-background-color: linear-gradient(to bottom, #4977A3, #B0C6DA, #9CB6CF);");
 		
-		StackPane spacer1 = StackPaneBuilder.create().minWidth(SLIDE_BUTTON_WIDTH).build();
-		StackPane spacer2 = StackPaneBuilder.create().minWidth(SLIDE_BUTTON_WIDTH).build();
-		HBox basePane = HBoxBuilder.create().padding(new Insets(0,0,0,10)).build();
+		StackPane spacer1 = new StackPane();
+		spacer1.setMinWidth(SLIDE_BUTTON_WIDTH);
+		
+		StackPane spacer2 = new StackPane();
+		spacer1.setMinWidth(SLIDE_BUTTON_WIDTH);
+		
+		HBox basePane = new HBox();
+		basePane.setPadding(new Insets(0,0,0,10));
+		
+//		StackPane spacer1 = StackPaneBuilder.create().minWidth(SLIDE_BUTTON_WIDTH).build();
+//		StackPane spacer2 = StackPaneBuilder.create().minWidth(SLIDE_BUTTON_WIDTH).build();
+//		HBox basePane = HBoxBuilder.create().padding(new Insets(0,0,0,10)).build();
 		basePane.getChildren().addAll(patientView, spacer1);
 		HBox.setHgrow(patientView, Priority.ALWAYS);
 		
-		  
-		slidePane = HBoxBuilder.create().build();
+		slidePane = new HBox();
+//		slidePane = HBoxBuilder.create().build();
 		slidePane.setAlignment(Pos.CENTER_RIGHT);
 		
-		StackPane slideButton = StackPaneBuilder.create().style(slideButtonCss()).minWidth(SLIDE_BUTTON_WIDTH).build();
+		
+		StackPane slideButton = new StackPane();
+		slideButton.setStyle(slideButtonCss());
+		slideButton.setMinWidth(SLIDE_BUTTON_WIDTH);
+//		StackPane slideButton = StackPaneBuilder.create().style(slideButtonCss()).minWidth(SLIDE_BUTTON_WIDTH).build();
 		
 		HBox hb = new HBox();
 		hb.setSpacing(20);
 		hb.setAlignment(Pos.CENTER);
 		
-		Label btnLbl =LabelBuilder.create().style("-fx-font-family:verdana;-fx-font-size:15;-fx-font-weight:bold;-fx-text-fill:#6D6D6D;").build();
+		
+		Label btnLbl = new Label();
+		btnLbl.setStyle("-fx-font-family:verdana;-fx-font-size:15;-fx-font-weight:bold;-fx-text-fill:#6D6D6D;");
+//		Label btnLbl =LabelBuilder.create().style("-fx-font-family:verdana;-fx-font-size:15;-fx-font-weight:bold;-fx-text-fill:#6D6D6D;").build();
 		btnLbl.textProperty().bind(btnTxt);
 		
 		hb.getChildren().addAll(getArrow(),btnLbl,getArrow());
 		hb.setRotate(-90);
-		slideButton.getChildren().add(GroupBuilder.create().children(hb).build());
+		Group group = new Group();
+		group.getChildren().add(hb);
+		slideButton.getChildren().add(group);
 		
 		slideButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
@@ -113,7 +157,11 @@ public class SlideToLeftDemo extends Application {
 			}
 		});
 		
-		StackPane contactPane = StackPaneBuilder.create().style(slideContentCss()).children(new Label("This is check for length of the contact pane demo in slide.")).build();
+		StackPane contactPane = new StackPane();
+		contactPane.setStyle(slideContentCss());
+		contactPane.getChildren().add(new Label("This is check for length of the contact pane demo in slide."));
+		
+//		StackPane contactPane = StackPaneBuilder.create().style(slideContentCss()).children(new Label("This is check for length of the contact pane demo in slide.")).build();
 		
 		StackPane contactPaneSmallContainer = new StackPane();
 		contactPaneSmallContainer.getChildren().add(contactPane);
@@ -154,7 +202,11 @@ public class SlideToLeftDemo extends Application {
 			}
 		});
 		
-		centerContainer.getChildren().addAll(basePane,StackPaneBuilder.create().padding(new Insets(0,0,0,10)).children(slidePane).build());
+		StackPane stackPane = new StackPane();
+		stackPane.setPadding(new Insets(0,0,0,10));
+		stackPane.getChildren().add(slidePane);
+		
+		centerContainer.getChildren().addAll(basePane, stackPane);
 	}
 	
 	private void animateToShow(){
@@ -229,16 +281,25 @@ public class SlideToLeftDemo extends Application {
 	}
 	
 	public Path getArrow(){
-		Path arrow = PathBuilder.create()
-						  .elements(new MoveTo(0, 0),
-						  			new LineTo(6, 6),
-						  			new LineTo(12, 0),
-						  			new MoveTo(0, 6),
-						  			new LineTo(6, 12),
-						  			new LineTo(12, 6))
-						  .stroke(Color.web("#5D5D5D"))
-						  .strokeWidth(2)
-						  .build();
+		Path arrow = new Path();		
+		arrow.getElements().addAll(new MoveTo(0, 0),
+	  			new LineTo(6, 6),
+	  			new LineTo(12, 0),
+	  			new MoveTo(0, 6),
+	  			new LineTo(6, 12),
+	  			new LineTo(12, 6));
+		arrow.setStroke(Color.web("#5D5D5D"));
+		arrow.setStrokeWidth(2);
+//		Path arrow = PathBuilder.create()
+//						  .elements(new MoveTo(0, 0),
+//						  			new LineTo(6, 6),
+//						  			new LineTo(12, 0),
+//						  			new MoveTo(0, 6),
+//						  			new LineTo(6, 12),
+//						  			new LineTo(12, 6))
+//						  .stroke(Color.web("#5D5D5D"))
+//						  .strokeWidth(2)
+//						  .build();
 		arrow.rotateProperty().bind(arrowRotate);
 		return arrow;
 	}

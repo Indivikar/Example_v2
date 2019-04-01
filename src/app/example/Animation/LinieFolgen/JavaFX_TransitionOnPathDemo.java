@@ -46,7 +46,7 @@ public class JavaFX_TransitionOnPathDemo extends Application {
         Group root = new Group();
         Scene scene = new Scene(root, 400, 300, Color.WHITE);
          
-        final Image image1 = new Image(getClass().getResourceAsStream("/images/delete.png"));
+        final Image image1 = new Image(getClass().getResourceAsStream("delete.png"));
         final ImageView imageView = new ImageView();
         imageView.setImage(image1);
          

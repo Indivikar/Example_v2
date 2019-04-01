@@ -31,7 +31,7 @@ public class ReadExamplesFolder {
 			Files.walkFileTree(path, new SimpleFileVisitor<Path>() {
 				@Override
 				public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-					System.out.println("file: " + file);
+//					System.out.println("file: " + file);
 					return FileVisitResult.CONTINUE;					
 				}
 
@@ -52,7 +52,7 @@ public class ReadExamplesFolder {
 //					Class<T> c = Class.forName(className);
 //					T castToT = c.cast(myObject);
 					
-					System.out.println("dir: " + dir);
+//					System.out.println("dir: " + dir);
 					return FileVisitResult.CONTINUE;
 				}
 			});
@@ -74,7 +74,7 @@ public class ReadExamplesFolder {
 					if (file.toFile().getName().contains("Demo") && !file.toFile().getName().endsWith("$1.class")) {
 //						System.out.println("file: " + file);
 						demoFile = file;
-						System.out.println("demoFile: " + demoFile);
+//						System.out.println("demoFile: " + demoFile);
 					}
 
 					return FileVisitResult.CONTINUE;					

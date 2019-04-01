@@ -100,7 +100,7 @@ public class FireworksDemo extends Application {
 
             canvas.setBlendMode(BlendMode.ADD);
             canvas.setEffect(new Reflection(0,0.4,0.15,0));
-            background = new ImageView(getClass().getResource("/images/sf.jpg").toExternalForm());
+            background = new ImageView(getClass().getResource("sf.jpg").toExternalForm());
             getChildren().addAll(background,canvas);
             // create animation timer that will be called every frame
             // final AnimationTimer timer = new AnimationTimer() {

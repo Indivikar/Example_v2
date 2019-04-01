@@ -1,4 +1,4 @@
-package Animation.Button;
+package app.example.Animation.Button;
 
 import javafx.animation.Transition;
 import javafx.beans.property.DoubleProperty;

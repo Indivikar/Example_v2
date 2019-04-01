@@ -51,7 +51,7 @@ public class App {
 			
 			String parent = file.getParent();
 			File readmeFile = new File(parent + File.separator + "readme.txt");
-			System.out.println("setReadme: " + readmeFile);
+//			System.out.println("setReadme: " + readmeFile);
 			if (readmeFile.exists()) {
 				try {
 					String content = new String(Files.readAllBytes(Paths.get(readmeFile.toURI())));
@@ -89,7 +89,7 @@ public class App {
 			String newString = parent.replace(pe.getErmittelterFile().getAbsolutePath(), "");
 			String newStringWithSlash= newString.replaceAll(Pattern.quote("\\"), "/");
 			String newURL = "https://github.com/Indivikar/Example_v2/tree/master/src" + newStringWithSlash;
-			System.out.println("newURL: " + newURL);
+//			System.out.println("newURL: " + newURL);
 			return newURL;
 		} else {
 			return "";

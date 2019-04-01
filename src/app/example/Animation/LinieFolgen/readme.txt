@@ -1,0 +1,1 @@
+Man kann mit der Mouse eine Linie Zeichnen und das X folgt dann der Linie

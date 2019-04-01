@@ -78,8 +78,8 @@ public class Start extends Application implements IWindowMax {
 			primaryStage.initStyle(StageStyle.TRANSPARENT);
 			primaryStage.setScene(scene);
 			primaryStage.setResizable(true);
-//			primaryStage.setX(6000);
-//			primaryStage.setY(10);		
+			primaryStage.setX(6000);
+			primaryStage.setY(10);		
 			primaryStage.show();
 		
 		} catch (IOException e) {
