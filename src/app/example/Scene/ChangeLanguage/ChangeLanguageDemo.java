@@ -88,7 +88,6 @@ public class ChangeLanguageDemo extends Application {
     }
 
     public static class Resources extends ListResourceBundle {
-
         @Override
         protected Object[][] getContents() {
             return new Object[][] {
