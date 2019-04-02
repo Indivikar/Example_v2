@@ -105,7 +105,6 @@ public class ChangeLanguageDemo extends Application {
                     {"greeting", "Bonjour"}
             };
         }
-
     }
 
     public static void main(String[] args) {
