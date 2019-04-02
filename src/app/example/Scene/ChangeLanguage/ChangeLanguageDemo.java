@@ -95,7 +95,6 @@ public class ChangeLanguageDemo extends Application {
                     {"greeting", "Hello"}
             };
         }
-
     }
 
     public static class Resources_fr extends ListResourceBundle {
