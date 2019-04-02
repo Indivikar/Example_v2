@@ -97,7 +97,6 @@ public class ChangeLanguageDemo extends Application {
     }
 
     public static class Resources_fr extends ListResourceBundle {
-
         @Override
         protected Object[][] getContents() {
             return new Object[][] {
