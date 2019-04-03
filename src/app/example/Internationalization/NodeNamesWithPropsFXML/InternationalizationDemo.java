@@ -20,7 +20,6 @@ public class InternationalizationDemo extends Application {
 		        try {
 					start(new Stage());
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}		       
 			});
