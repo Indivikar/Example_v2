@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import app.functions.PfadErmitteln;
@@ -14,6 +15,7 @@ import javafx.beans.property.SimpleStringProperty;
 public class App {
 
 	private SimpleStringProperty bezeichnung;
+	private SimpleStringProperty kurzBezeichnung;
 	private SimpleStringProperty kategorie;
 	private SimpleStringProperty startFile;
 	private SimpleStringProperty className;
@@ -23,13 +25,33 @@ public class App {
 	
 	public App(String bezeichnung, String kategorie, String startFile) {
 		this.bezeichnung = new SimpleStringProperty(bezeichnung);
+		
 		this.kategorie = new SimpleStringProperty(kategorie);
 		this.startFile = new SimpleStringProperty(startFile);
 		
 		this.className = new SimpleStringProperty(setClassName(startFile));
-		this.readMe = new SimpleStringProperty(setReadme(startFile));
+		String rm = setReadme(startFile);
+		this.readMe = new SimpleStringProperty(rm);
+		this.kurzBezeichnung = new SimpleStringProperty(cutString(rm, 50));
 		this.sourceCode = new SimpleStringProperty(setSourceCode(startFile));
 	} 
+	
+	// cut the String but not in the word
+    private String cutString(String text, int lineSize) {
+		if (text == null) {
+			return "";
+		}
+        String newString = "";
+
+        Pattern p = Pattern.compile("\\b.{1," + (lineSize-1) + "}\\b\\W?");
+        Matcher m = p.matcher(text);
+        
+        if (m.find()) {
+        	newString = m.group().trim() + "...";
+		}
+        
+        return newString;
+    }
 	
 	private String setClassName(String className) {
 		PfadErmitteln pe = new PfadErmitteln(new String[] {}, true, false);
@@ -98,6 +120,7 @@ public class App {
 	
 	// Getter
 	public String getBezeichnung() {return bezeichnung.get();}
+	public String getKurzBezeichnung() {return kurzBezeichnung.get();}
 	public String getKategorie() {return kategorie.get();}
 	public String getStartFile() {return startFile.get();}
 	public String getClassName() {return className.get();}
@@ -106,6 +129,7 @@ public class App {
 	
 	// Setter
 	public void setBezeichnung(String bezeichnung) {this.bezeichnung.set(bezeichnung);}
+	public void setKurzBezeichnung(String kurzBezeichnung) {this.kurzBezeichnung.set(kurzBezeichnung);}
 	public void setKategorie(String kategorie) {this.kategorie.set(kategorie);}
 	public void setStartFile(String startFile) {this.kategorie.set(startFile);}
 //	public void setStartFile(String startFile) {		

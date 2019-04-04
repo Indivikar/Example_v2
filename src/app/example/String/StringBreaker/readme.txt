@@ -1,0 +1,2 @@
+- Zeilenumbruch nach 50 Zeichen, es wird aber kein Wort getrennt
+- Text wird abgeschnitten nach 50 Zeichen, es wird aber kein Wort getrennt

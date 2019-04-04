@@ -18,7 +18,7 @@
          <children>
             <AnchorPane>
                <children>
-                  <TextField id="textFieldVorname" fx:id="textFieldBezeichnung" prefHeight="40.0" promptText="Bezeichnung" styleClass="controlsFilter" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="54.0">
+                  <TextField id="textFieldVorname" fx:id="textFieldBezeichnung" prefHeight="40.0" promptText="Bezeichnung" styleClass="controlsFilter" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="54.0" AnchorPane.topAnchor="0.0">
                      <tooltip>
                         <Tooltip text="Vorname" />
                      </tooltip>
@@ -35,12 +35,12 @@
             </AnchorPane>
             <AnchorPane>
                <children>
-                  <Label id="labelFilter" text="Kategorie" textFill="WHITE" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="0.0">
+                  <Label id="labelFilter" text="Kategorie" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <ComboBox id="comboBoxGemeinde" fx:id="comboBoxKategorie" prefHeight="40.0" prefWidth="256.0" promptText="bitte wählen..." AnchorPane.rightAnchor="54.0">
+                  <ComboBox id="comboBoxGemeinde" fx:id="comboBoxKategorie" prefHeight="40.0" prefWidth="256.0" promptText="bitte wählen..." AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="54.0" AnchorPane.topAnchor="0.0">
                      <styleClass>
                         <String fx:value="input" />
                         <String fx:value="controlsFilter" />
@@ -50,17 +50,21 @@
                      <tooltip>
                         <Tooltip text="entfernen" />
                      </tooltip>
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
                   </Button>
                </children>
             </AnchorPane>
          </children>
       </VBox>
-      <AnchorPane layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="473.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <AnchorPane layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <children>
             <TableView fx:id="tableViewApps" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <columns>
-                  <TableColumn fx:id="tableColumnBezeichnung" prefWidth="300.0" text="Bezeichnung" />
-                  <TableColumn fx:id="tableColumnKategorie" prefWidth="200.0" text="Kategorie" />
+                  <TableColumn fx:id="tableColumnBezeichnung" prefWidth="250.0" text="Bezeichnung" />
+                  <TableColumn fx:id="tableColumnKategorie" prefWidth="150.0" text="Kategorie" />
+                  <TableColumn fx:id="tableColumnBeschreibung" prefWidth="287.0" text="Beschreibung" />
                </columns>
             </TableView>
          </children>

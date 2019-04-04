@@ -135,6 +135,33 @@
 	-fx-background-color: #F1707A;
 }
 
+#buttonStyleWeiss, #buttonStyleWeissRot {
+	-fx-border-color: #ffffff;
+	-fx-text-fill: #ffffff;
+}
+
+#buttonStyleWeiss, #buttonStyleBlau, #buttonStyleWeissRot, #buttonStyleBlauRot, #buttonOption {
+	-fx-font-weight: bold;	
+	-fx-border-radius: 2;
+	-fx-border-width: 2;
+	-fx-background-color: transparent;
+
+}
+
+#buttonStyleWeissRot:hover, #buttonStyleBlauRot:hover{
+	-fx-border-color: #e00c0c;
+	-fx-text-fill: #e00c0c;
+}
+
+#buttonStyleBlau:hover, #buttonStyleWeiss:hover, #buttonStyleWeissRot:hover, #buttonStyleBlauRot:hover{
+	-fx-border-width: 3;
+}
+
+
+#buttonStyleBlau:pressed, #buttonStyleWeiss:pressed, #buttonStyleWeissRot:pressed, #buttonStyleBlauRot:pressed, #buttonOption:pressed {
+	-fx-opacity: 0.6;
+}
+
 #drawer {
 	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
 }

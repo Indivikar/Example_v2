@@ -96,10 +96,10 @@ public class Start extends Application implements IWindowMax {
     private JFXDrawer addContentInDrawer(AnchorPane drawerContent) {
     	JFXDrawer drawer = new JFXDrawer();
         drawer.setDirection(DrawerDirection.LEFT);
-        drawer.setDefaultDrawerSize(500);
+        drawer.setDefaultDrawerSize(400);
         drawer.setSidePane(drawerContent);
         drawer.setOverLayVisible(false);
-        drawer.setResizableOnDrag(true);
+        drawer.setResizableOnDrag(false);
         
 		return drawer;
 	}

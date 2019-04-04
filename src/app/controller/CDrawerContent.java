@@ -45,7 +45,7 @@ public class CDrawerContent implements Initializable, IWindowMax {
 
 	private void addListeners() {
 		propSelectedItem.addListener((ob, oldVal, newVal) -> {
-			System.out.println("Listener");
+//			System.out.println("Listener");
 			labelBezeichnung.setText(propSelectedItem.get().getBezeichnung());
 			labelKategorie.setText(propSelectedItem.get().getKategorie());
 			labelBeschreibung.setText(propSelectedItem.get().getReadMe());
@@ -96,7 +96,7 @@ public class CDrawerContent implements Initializable, IWindowMax {
 
     	try {
 			String className = propSelectedItem.get().getClassName();
-			System.out.println("className: " + className);
+//			System.out.println("className: " + className);
 	//		String className = "app.examples.Events.MousePosition.DrawLineOnMouseDragDemo";
 			if (className != null && !className.equals("")) {
 				Class<?> clazz = Class.forName(className);

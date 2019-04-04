@@ -1,6 +1,9 @@
 package app.functions;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
@@ -45,14 +48,11 @@ public class ReadExamplesFolder {
 					String[] part = splitString(path, dir);
 					
 					if (part != null && part.length == 3) {
-						appsList.add(new App(part[2], part[1], 
-								getDemoFile(dir).toString()) );
+						appsList.add(new App(part[2], part[1],getDemoFile(dir).toString()));
+						getCrossReferences(dir, part);
 					}
-//					String className = "com.mycompany.Foo";
-//					Class<T> c = Class.forName(className);
-//					T castToT = c.cast(myObject);
-					
-//					System.out.println("dir: " + dir);
+														
+					System.out.println("dir: " + dir);
 					return FileVisitResult.CONTINUE;
 				}
 			});
@@ -63,6 +63,25 @@ public class ReadExamplesFolder {
 	
 	}
 	
+	private void getCrossReferences(Path dir, String[] part) {
+		File file = new File(dir + File.separator + "crossReferences.txt");
+		
+		if (file.exists()) {
+			try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+			    String line;
+			    while ((line = br.readLine()) != null) {
+			    	appsList.add(new App(part[2], line,getDemoFile(dir).toString()));
+			    }
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+	}
 	
 	private Path getDemoFile(Path dir) {
 		demoFile = new File("").toPath();
