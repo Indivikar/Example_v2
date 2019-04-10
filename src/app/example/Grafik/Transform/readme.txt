@@ -1,0 +1,1 @@
+Das Viereck kann per Mouse Pressed und Drag skaliert werden.

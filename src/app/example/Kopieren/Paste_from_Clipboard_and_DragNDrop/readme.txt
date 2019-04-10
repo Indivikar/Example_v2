@@ -1,0 +1,1 @@
+Einen Text einfügen, der Text wird nach jedem Freizeichen getrennt und als Textbausteine in einem ListView angezeit. Die Textbausteine können per Drag N Drop verschoben werden.

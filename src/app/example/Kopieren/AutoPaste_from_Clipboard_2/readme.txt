@@ -1,0 +1,1 @@
+Einen Text mit "Listener", automatisch in ein TextArea einfügen, mit "java.awt.datatransfer" und "Toolkit.getDefaultToolkit().getSystemClipboard().addFlavorListener()"

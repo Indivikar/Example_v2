@@ -1,0 +1,1 @@
+Einen Text ohne "Listener", automatisch in ein TextArea einfügen, mit "javafx.scene.input.Clipboard" und Timeline
