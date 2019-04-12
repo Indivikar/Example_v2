@@ -1,1 +1,1 @@
-Das Item 20, in der ComboBox ist nicht w�hlbar.
+﻿Das Item 20, in der ComboBox ist nicht wählbar.

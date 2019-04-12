@@ -161,21 +161,24 @@ public class CContent implements Initializable, IWindowMax {
 	            @Override
 	            protected void updateItem(String item, boolean empty) {
 	                super.updateItem(item, empty);
-
+	                TableRow<App> currentRow = getTableRow();
 	                if (item == null || empty) {
 	                    setText(null);
 	                    setGraphic(null);
+	                    currentRow.setStyle("");
 	                } else {
 	                	setText(getItem().toString());
 	                	setGraphic(null);
 	                	Platform.runLater(() -> {
-		                	TableRow<App> currentRow = getTableRow();
+//		                	TableRow<App> currentRow = getTableRow();
 		                	App appItem = currentRow.getItem();
 		                	if (appItem != null) {
 								String startFile = appItem.getStartFile();
 				                if (startFile == null || startFile.isEmpty()) {
 									currentRow.setStyle("-fx-background-color:lightcoral");
 								}	
+							} else {
+								currentRow.setStyle("");
 							}			               
 	                	});	      	                	
 	                }

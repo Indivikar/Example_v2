@@ -1,0 +1,1 @@
+Alle CheckBoxen, die selected sind, werden in eine Liste eingetragen und angezeigt.

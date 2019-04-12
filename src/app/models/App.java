@@ -23,16 +23,18 @@ public class App {
 	private SimpleStringProperty sourceCode;
 	
 	
-	public App(String bezeichnung, String kategorie, String startFile) {
+	public App(String bezeichnung, String kategorie, String startFile, String readMe) {
 		this.bezeichnung = new SimpleStringProperty(bezeichnung);
 		
 		this.kategorie = new SimpleStringProperty(kategorie);
 		this.startFile = new SimpleStringProperty(startFile);
 		
 		this.className = new SimpleStringProperty(setClassName(startFile));
-		String rm = setReadme(startFile);
-		this.readMe = new SimpleStringProperty(rm);
-		this.kurzBezeichnung = new SimpleStringProperty(cutString(rm, 50));
+//		String rm = setReadme(startFile);
+//		this.readMe = new SimpleStringProperty(rm);
+//		this.kurzBezeichnung = new SimpleStringProperty(cutString(rm, 50));
+		this.readMe = new SimpleStringProperty(readMe);
+		this.kurzBezeichnung = new SimpleStringProperty(cutString(readMe, 50));
 		this.sourceCode = new SimpleStringProperty(setSourceCode(startFile));
 	} 
 	
@@ -74,7 +76,9 @@ public class App {
 			String parent = file.getParent();
 			File readmeFile = new File(parent + File.separator + "readme.txt");
 //			System.out.println("setReadme: " + readmeFile);
+//			System.out.println("Readme is exists: " + readmeFile.exists());
 			if (readmeFile.exists()) {
+				
 				try {
 					String content = new String(Files.readAllBytes(Paths.get(readmeFile.toURI())));
 					return content;

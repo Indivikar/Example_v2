@@ -1,4 +1,4 @@
-package app.example.Animation.AppleMenu;
+package app.example.Menu.AppleMenu;
 
 import java.net.URL;
 import java.util.ArrayList;

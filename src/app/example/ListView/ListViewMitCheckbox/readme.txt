@@ -1,0 +1,1 @@
+Select alle CheckBoxen in einem ListView
