@@ -93,9 +93,13 @@ public class CDrawerContent implements Initializable, IWindowMax {
 	}
 	
 	private void runDemo() {
+		runDemo(propSelectedItem.get());
+	}
+	
+	public void runDemo(App selItem) {
 
     	try {
-			String className = propSelectedItem.get().getClassName();
+			String className = selItem.getClassName();
 //			System.out.println("className: " + className);
 	//		String className = "app.examples.Events.MousePosition.DrawLineOnMouseDragDemo";
 			if (className != null && !className.equals("")) {

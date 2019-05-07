@@ -211,6 +211,11 @@ public class CContent implements Initializable, IWindowMax {
 					}
     	        	
     	        }
+    	        
+    	        if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+    	        	App selItem = tableViewApps.getSelectionModel().getSelectedItem();
+    	        	start.getControllerDrawerContent().runDemo(selItem);  	        	
+    	        }
     	    }
     	}); 
 	}
