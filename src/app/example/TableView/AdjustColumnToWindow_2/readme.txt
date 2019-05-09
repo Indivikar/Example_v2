@@ -1,0 +1,3 @@
+- Eine Spalte deiner Wahl, wird an die Fenstergrösse angepasst
+- ohne Bindings
+- mit ChangeListener

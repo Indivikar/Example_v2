@@ -1,0 +1,2 @@
+- passt die Spalten Proportional an wenn die Fenstergrösse geändert wird
+- mit Bindings
