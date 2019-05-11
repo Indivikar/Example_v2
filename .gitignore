@@ -2,6 +2,7 @@
 ###################
 /bin/
 /daten/
+/src/app/test/
 
 # Compiled source # 
 ################### 
