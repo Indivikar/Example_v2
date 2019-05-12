@@ -1,6 +1,7 @@
 package app;
 
 import java.io.IOException;
+import java.net.InetAddress;
 
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXDrawersStack;
@@ -15,9 +16,12 @@ import app.view.function.ResizeHelper;
 import app.view.function.StageVerschiebenMitAnchorPane;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -78,8 +82,18 @@ public class Start extends Application implements IWindowMax {
 			primaryStage.initStyle(StageStyle.TRANSPARENT);
 			primaryStage.setScene(scene);
 			primaryStage.setResizable(true);
-			primaryStage.setX(6000);
-			primaryStage.setY(10);		
+			
+		    InetAddress addr;
+		    addr = InetAddress.getLocalHost();
+
+		    if (!addr.getHostName().equals("DESKTOP-BLCOP6C")) {
+				primaryStage.setX(6000);
+				primaryStage.setY(10);
+			} else {
+				primaryStage.setX(4000);
+				primaryStage.setY(500);
+			}
+								
 			primaryStage.show();
 		
 		} catch (IOException e) {

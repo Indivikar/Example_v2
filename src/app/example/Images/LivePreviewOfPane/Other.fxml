@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.Rectangle?>
+
+<Group xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+       fx:controller="app.example.Images.LivePreviewOfPane.OtherController">
+
+    <Rectangle fx:id="rect" width="200" height="100"/>
+
+</Group>
