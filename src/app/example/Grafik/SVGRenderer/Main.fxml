@@ -1,0 +1,16 @@
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.example.Grafik.SVGRenderer.MainController">
+   <children>
+      <HBox layoutX="60.0" prefHeight="200.0" prefWidth="320.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="imgView" fitHeight="150.0" fitWidth="200.0" layoutX="60.0" pickOnBounds="true" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
