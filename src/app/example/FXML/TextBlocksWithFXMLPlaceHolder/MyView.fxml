@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.example.FXML.TextBlocksWithFXMLPlaceHolder.MyController">
+   <children>
+      <TabPane id="TabPane" layoutX="10.0" layoutY="10.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab id="Tab_1" text="#tab1">
+            <content>
+              <AnchorPane id="AnchorpaneTab_1" minHeight="0.0" minWidth="0.0" prefHeight="180.0">
+                     <children>
+                        <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <menus>
+                            <Menu mnemonicParsing="false" text="File">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="Close" />
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="#menu_1">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="#menuItem_1" />
+                                    <RadioMenuItem mnemonicParsing="false" text="#menuItem_1">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="radioMenuItem" />
+                                       </toggleGroup>
+                                    </RadioMenuItem>
+                                    <RadioMenuItem mnemonicParsing="false" text="#menuItem_1" toggleGroup="$radioMenuItem" />
+                                    <CheckMenuItem mnemonicParsing="false" text="#menuItem_1" />
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Help">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="About" />
+                              </items>
+                            </Menu>
+                          </menus>
+                           <tooltip>
+                              <Tooltip text="#menuBar" />
+                           </tooltip>
+                        </MenuBar>
+                        <VBox id="vBox_2_Tab_1" alignment="TOP_CENTER" prefWidth="300.0" spacing="15.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="40.0">
+                           <children>
+                              <HBox alignment="CENTER" spacing="50.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" text="#button_1">
+                                       <tooltip>
+                                          <Tooltip text="#button_1" />
+                                       </tooltip>
+                                    </Button>
+                                    <Button mnemonicParsing="false" text="Button 2">
+                                       <tooltip>
+                                          <Tooltip text="#button_2" />
+                                       </tooltip>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="50.0">
+                                 <children>
+                                      <!-- This label's text will be taken from the bundle automatically -->
+                                      <Label id="labelTab_1" text="#label" />
+                                    <Label text="Label 2">
+                                       <tooltip>
+                                          <Tooltip text="#label_2" />
+                                       </tooltip>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <CheckBox mnemonicParsing="false" text="#checkBox" />
+                              <ColorPicker prefWidth="200.0" promptText="#colorPicker" />
+                              <ComboBox prefWidth="200.0" promptText="#comboBox" />
+                              <DatePicker prefWidth="200.0" promptText="#datePicker" />
+                              <MenuButton mnemonicParsing="false" prefWidth="200.0" text="#menuButton">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Action 1" />
+                                  <MenuItem mnemonicParsing="false" text="Action 2" />
+                                </items>
+                              </MenuButton>
+                              <PasswordField maxWidth="200.0" prefWidth="0.0" promptText="#passwordField" text="#passwordField" />
+                              <RadioButton mnemonicParsing="false" text="#radioButton">
+                                 <tooltip>
+                                    <Tooltip text="Empty Tooltip" />
+                                 </tooltip>
+                              </RadioButton>
+                              <TextArea maxHeight="50.0" maxWidth="200.0" promptText="#textArea" text="#textArea" />
+                              <TextField maxWidth="200.0" promptText="#textField" text="#textField" />
+                              <ToggleButton mnemonicParsing="false" prefWidth="200.0" text="#toggleButton" />
+                              <ProgressBar prefWidth="200.0" progress="0.0">
+                                 <tooltip>
+                                    <Tooltip text="#progressBar" />
+                                 </tooltip>
+                              </ProgressBar>
+                              <ProgressIndicator progress="0.0">
+                                 <tooltip>
+                                    <Tooltip text="#progressIndicator" />
+                                 </tooltip>
+                              </ProgressIndicator>
+                              <ChoiceBox prefWidth="150.0">
+                                 <tooltip>
+                                    <Tooltip text="#choiceBox" />
+                                 </tooltip>
+                              </ChoiceBox>
+                              <Hyperlink text="Hyperlink">
+                                 <tooltip>
+                                    <Tooltip text="#hyperLink" />
+                                 </tooltip>
+                              </Hyperlink>
+                              <Spinner>
+                                 <tooltip>
+                                    <Tooltip text="#spinner" />
+                                 </tooltip>
+                              </Spinner>
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefWidth="300.0" spacing="20.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="40.0">
+                           <children>
+                              <Accordion>
+                                <panes>
+                                  <TitledPane animated="false" text="#titlePane_1">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="25.0" prefWidth="200.0">
+                                             <children>
+                                                <Label alignment="CENTER" text="#label" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </TitledPane>
+                                  <TitledPane animated="false" text="#titlePane_2">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="25.0" prefWidth="200.0">
+                                             <children>
+                                                <Button mnemonicParsing="false" text="#button_1" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0" />
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </TitledPane>
+                                  <TitledPane animated="false" text="#titlePane_3">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="25.0" prefWidth="200.0">
+                                             <children>
+                                                <CheckBox alignment="CENTER" mnemonicParsing="false" text="#checkBox" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </TitledPane>
+                                </panes>
+                                 <tooltip>
+                                    <Tooltip text="#accordion" />
+                                 </tooltip>
+                              </Accordion>
+                              <Separator prefWidth="200.0" />
+                              <Label text="FlowPane" />
+                              <FlowPane alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                                 <children>
+                                    <Label text="#label" />
+                                 </children>
+                              </FlowPane>
+                              <Separator prefWidth="200.0" />
+                              <BorderPane prefHeight="80.0" prefWidth="200.0">
+                                 <left>
+                                    <Label text="#label" BorderPane.alignment="CENTER" />
+                                 </left>
+                                 <center>
+                                    <Label text="#label" BorderPane.alignment="CENTER" />
+                                 </center>
+                                 <right>
+                                    <Label text="#label" BorderPane.alignment="CENTER" />
+                                 </right>
+                                 <bottom>
+                                    <Label text="#label" BorderPane.alignment="CENTER" />
+                                 </bottom>
+                                 <top>
+                                    <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label text="BorderPane" />
+                                          <Label text="#label" />
+                                       </children>
+                                    </VBox>
+                                 </top>
+                              </BorderPane>
+                              <Separator prefWidth="200.0" />
+                              <ButtonBar prefHeight="40.0">
+                                <buttons>
+                                    <Label text="ButtonBar" />
+                                    <Label text="#label" />
+                                  <Button mnemonicParsing="false" text="#button_1" />
+                                </buttons>
+                                 <tooltip>
+                                    <Tooltip text="#buttonBar" />
+                                 </tooltip>
+                              </ButtonBar>
+                              <Separator prefWidth="200.0" />
+                              <GridPane alignment="TOP_CENTER">
+                                <columnConstraints>
+                                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="GridPane" GridPane.columnIndex="1" />
+                                    <Label text="#label" GridPane.rowIndex="1" />
+                                    <Label text="#label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label text="#label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                        <VBox spacing="20.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0">
+                           <children>
+                              <TableView id="TableViewTab_1">
+                                <columns>
+                                  <TableColumn prefWidth="100.0" text="#C1" />
+                                  <TableColumn prefWidth="148.0" text="#C2" />
+                                </columns>
+                                 <tooltip>
+                                    <Tooltip text="#tableView" />
+                                 </tooltip>
+                              </TableView>
+                              <ListView prefHeight="200.0" prefWidth="200.0">
+                                 <tooltip>
+                                    <Tooltip text="#listView" />
+                                 </tooltip>
+                              </ListView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="text blocks">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="10.0" layoutY="10.0" spacing="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <children>
+                              <Label text="The table is not editable, it only serves to view the data">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tableViewData">
+                                <columns>
+                                    <TableColumn fx:id="columnKey" prefWidth="150.0" text="Key" />
+                                  <TableColumn fx:id="columnID" prefWidth="20.0" text="ID" />
+                                  <TableColumn fx:id="columnNodeCat" prefWidth="100.0" text="nodeCat" />
+                                    <TableColumn fx:id="columnSpecification" prefWidth="100.0" text="specification" />
+                                    <TableColumn fx:id="columnDefaultText" text="defaultText" />
+                                    <TableColumn fx:id="columnNewText" prefWidth="200.0" text="newText" />
+                                    <TableColumn fx:id="columnPromptText" prefWidth="200.0" text="promptText" />
+                                    <TableColumn fx:id="columnToolTip" prefWidth="200.0" text="toolTip" />
+                                    <TableColumn fx:id="columnSetDefault" text="setDefault" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
