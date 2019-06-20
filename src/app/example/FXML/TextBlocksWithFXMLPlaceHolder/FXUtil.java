@@ -33,6 +33,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Spinner;
+import javafx.scene.control.SplitPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
@@ -62,38 +63,38 @@ public class FXUtil {
 		ObservableMap<String, TextBlock> keys = FXCollections.observableMap(map);
 
 		keys.put("#button_1", new TextBlock("", "1", null, "Button", "Tab 1", "defaultText", "new Button Text", "", "new ToolTip Button 1", false));	
-		keys.put("#button_2", new TextBlock("", "1", null, "Button", "Tab 1", "defaultText", "new Button Text", "", "new ToolTip Button 2", false));	
-		keys.put("#buttonBar", new TextBlock("", "1", null, "ButtonBar", "Tab 1", "", "", "", "new ToolTip ButtonBar", false));
+		keys.put("#button_2", new TextBlock("", "1", null, "Button", "Tab 2", "defaultText", "new Button Text", "", "new ToolTip Button 2", false));	
+		keys.put("#buttonBar", new TextBlock("", "1", null, "ButtonBar", "Tab 3", "", "", "", "new ToolTip ButtonBar", false));
 		keys.put("#checkBox", new TextBlock("", "1", null, "CheckBox", "Tab 1", "defaultText", "new CheckBox Text", "", "new ToolTip CheckBox", false));
-		keys.put("#choiceBox", new TextBlock("", "1", null, "ChoiceBox", "Tab 1", "", "", "", "new ToolTip ChoiceBox", false));
-		keys.put("#colorPicker", new TextBlock("", "1", null, "ColorPicker", "Tab 1", "", "", "", "new ToolTip ColorPicker", false));
+		keys.put("#choiceBox", new TextBlock("", "1", null, "ChoiceBox", "Tab 2", "", "", "", "new ToolTip ChoiceBox", false));
+		keys.put("#colorPicker", new TextBlock("", "1", null, "ColorPicker", "Tab 3", "", "", "", "new ToolTip ColorPicker", false));
 		keys.put("#comboBox", new TextBlock("", "1", null, "ComboBox", "Tab 1", "defaultText", "", "new ComboBox PromptText", "new ToolTip ComboBox", false));
-		keys.put("#datePicker", new TextBlock("", "1", null, "DataPicker", "Tab 1", "defaultText", "", "new DataPicker PromptText", "new ToolTip DataPicker", false));		
-		keys.put("#label", new TextBlock("", "1", null, "Label", "Tab 1", "defaultText", "new Text", "", "new ToolTip Label", false));	
+		keys.put("#datePicker", new TextBlock("", "1", null, "DataPicker", "Tab 2", "defaultText", "", "new DataPicker PromptText", "new ToolTip DataPicker", false));		
+		keys.put("#label", new TextBlock("", "1", null, "Label", "Tab 3", "defaultText", "new Text", "", "new ToolTip Label", false));	
 		keys.put("#label_2", new TextBlock("", "1", null, "Label 2", "Tab 1", "defaultText", "", "", "new ToolTip Label 2", false));
-		keys.put("#listView", new TextBlock("", "1", null, "ListView", "Tab 1", "", "", "", "new ToolTip ListView", false));
-		keys.put("#hyperLink", new TextBlock("", "1", null, "HyperLink", "Tab 1", "", "", "", "new ToolTip HyperLink", false));		
+		keys.put("#listView", new TextBlock("", "1", null, "ListView", "Tab 2", "", "", "", "new ToolTip ListView", false));
+		keys.put("#hyperLink", new TextBlock("", "1", null, "HyperLink", "Tab 3", "", "", "", "new ToolTip HyperLink", false));		
 		keys.put("#menuButton", new TextBlock("", "1", null, "MenuButton", "Tab 1", "defaultText", "new MenuButton Text", "", "new ToolTip MenuButton", false));
-		keys.put("#menuBar", new TextBlock("", "1", null, "MenuBar", "Tab 1", "", "", "", "new ToolTip MenuBar", false));
-		keys.put("#menu_1", new TextBlock("", "1", null, "Menu", "Tab 1", "defaultText", "new Menu Edit", "", "", false));
-		keys.put("#menuItem_1", new TextBlock("", "1", null, "MenuItem", "Tab 1", "defaultText", "new MenuItem Delete", "", "", false));
-		keys.put("#passwordField", new TextBlock("", "1", null, "PasswordField", "Tab 1", "defaultText", "new PasswordField Text", 
+		keys.put("#menuBar", new TextBlock("", "1", null, "MenuBar", "Tab 2", "", "", "", "new ToolTip MenuBar", false));
+		keys.put("#menu_1", new TextBlock("", "1", null, "Menu", "Tab 3", "defaultText", "new Menu Edit", "", "", false));
+		keys.put("#menuItem_1", new TextBlock("", "1", null, "MenuItem", "Tab 2", "defaultText", "new MenuItem Delete", "", "", false));
+		keys.put("#passwordField", new TextBlock("", "1", null, "PasswordField", "Tab 3", "defaultText", "new PasswordField Text", 
 				"new PasswordField PromptText", "new ToolTip PasswordField", false));
 		keys.put("#progressBar", new TextBlock("", "1", null, "ProgressBar", "Tab 1", "", "", "", "new ToolTip ProgressBar", false));	
-		keys.put("#progressIndicator", new TextBlock("", "1", null, "ProgressIndicator", "Tab 1", "", "", "", "new ToolTip ProgressIndicator", false));	
-		keys.put("#radioButton", new TextBlock("", "1", null, "RadioButton", "Tab 1", "defaultText", "new RadioButton Text", "", "new ToolTip RadioButton", false));	
+		keys.put("#progressIndicator", new TextBlock("", "2", null, "ProgressIndicator", "Tab 1", "", "", "", "new ToolTip ProgressIndicator", false));	
+		keys.put("#radioButton", new TextBlock("", "1", null, "RadioButton", "Tab 3", "defaultText", "new RadioButton Text", "", "new ToolTip RadioButton", false));	
 		keys.put("#spinner", new TextBlock("", "1", null, "Spinner", "Tab 1", "", "", "", "new ToolTip Spinner", false));
-		keys.put("#tab1", new TextBlock("", "1", null, "Tab", "Tab 1", "defaultText", "Nodes", "", "new ToolTip Tab 1", false));	
-		keys.put("#tableView", new TextBlock("", "1", null, "TableView", "Tab 1", "", "", "", "new ToolTip TableView", false));
+		keys.put("#tab1", new TextBlock("", "1", null, "Tab", "Tab 2", "defaultText", "Nodes", "", "new ToolTip Tab 1", false));	
+		keys.put("#tableView", new TextBlock("", "1", null, "TableView", "Tab 3", "", "", "", "new ToolTip TableView", false));
 		keys.put("#C1", new TextBlock("", "1", null, "TableColumn", "Tab 1", "defaultText", "Col 1", "", "", false));	
-		keys.put("#C2", new TextBlock("", "1", null, "TableColumn", "Tab 1", "defaultText", "Col 2", "", "", true));
-		keys.put("#textArea", new TextBlock("", "1", null, "TextArea", "Tab 1", "defaultText", "new TextArea Text", "new TextArea PromptText", "new ToolTip TextArea", false));
+		keys.put("#C2", new TextBlock("", "1", null, "TableColumn", "Tab 2", "defaultText", "Col 2", "", "", true));
+		keys.put("#textArea", new TextBlock("", "1", null, "TextArea", "Tab 3", "defaultText", "new TextArea Text", "new TextArea PromptText", "new ToolTip TextArea", false));
 		keys.put("#textField", new TextBlock("", "1", null, "TextField", "Tab 1", "defaultText", "new TextField Text", "new TextField PromptText", "new ToolTip TextField", false));
-		keys.put("#toggleButton", new TextBlock("", "1", null, "ToggleButton", "Tab 1", "defaultText", "new ToggleButton Text", 
+		keys.put("#toggleButton", new TextBlock("", "1", null, "ToggleButton", "Tab 2", "defaultText", "new ToggleButton Text", 
 				"new ToggleButton PromptText", "new ToolTip ToggleButton", false));		
-		keys.put("#titlePane_1", new TextBlock("", "1", null, "TitlePane", "Tab 1", "defaultText", "TitlePane 1", "", "new ToolTip TitlePane 1", false));
+		keys.put("#titlePane_1", new TextBlock("", "1", null, "TitlePane", "Tab 3", "defaultText", "TitlePane 1", "", "new ToolTip TitlePane 1", false));
 		keys.put("#titlePane_2", new TextBlock("", "1", null, "TitlePane", "Tab 1", "defaultText", "TitlePane 2", "", "new ToolTip TitlePane 2", false));
-		keys.put("#titlePane_3", new TextBlock("", "1", null, "TitlePane", "Tab 1", "defaultText", "TitlePane 3", "", "new ToolTip TitlePane 3", false));
+		keys.put("#titlePane_3", new TextBlock("", "1", null, "TitlePane", "Tab 2", "defaultText", "TitlePane 3", "", "new ToolTip TitlePane 3", false));
 		
 	    return keys.entrySet();
 	}
@@ -377,7 +378,20 @@ public class FXUtil {
         		spinner.setTooltip(getNewToolTip(placeHolderToolTip));
 			}   
 		}
-        
+           
+        if (node instanceof SplitPane) {
+        	SplitPane splitPane = (SplitPane) node;         	     	
+        	Tooltip tooltip = splitPane.getTooltip();
+
+        	if (tooltip != null && tooltip.getText().startsWith(placeHolderKey)) {                		
+        		String placeHolderToolTip = splitPane.getTooltip().getText();
+        		splitPane.setTooltip(getNewToolTip(placeHolderToolTip));
+			}   
+
+        	for (Node item : splitPane.getItems()) {
+        		instances(item);
+			}
+		}
         
         if (node instanceof TextArea) {       	
         	TextArea textArea = (TextArea) node;       
