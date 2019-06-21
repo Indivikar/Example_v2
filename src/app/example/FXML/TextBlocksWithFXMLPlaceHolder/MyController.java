@@ -51,9 +51,7 @@ public class MyController implements Initializable {
 	@FXML private Button buttonDelComboBoxNodeCat;
 	@FXML private ComboBox<String> comboBoxSpecification;
 	@FXML private Button buttonDelComboBoxSpecification;
-	
-	@FXML private Label label;
-	
+
 	@FXML private TableView<Map.Entry<String, TextBlock>> tableViewData;
 	@FXML private TableColumn<Map.Entry<String, TextBlock>, String> columnKey;
 	@FXML private TableColumn<Map.Entry<String, TextBlock>, String> columnID;
@@ -105,8 +103,7 @@ public class MyController implements Initializable {
 	}
     
     
-    private Callback<ListView<String>, ListCell<String>> cell(ComboBox<String> comboBox) {
-	  
+    private Callback<ListView<String>, ListCell<String>> cell(ComboBox<String> comboBox) {	  
 	   Callback<ListView<String>, ListCell<String>> cellNodeCat = new Callback<ListView<String>, ListCell<String>>() {
 			@Override
 			public ListCell<String> call(ListView<String> arg0) {
@@ -231,13 +228,13 @@ public class MyController implements Initializable {
     	columnPromptText.setCellFactory(TextFieldTableCell.forTableColumn());
     	columnPromptText.setOnEditCommit((CellEditEvent<Map.Entry<String, TextBlock>, String> t) -> {
             t.getTableView().getItems().get(t.getTablePosition().getRow())
-                    .getValue().setNewText(t.getNewValue());
+                    .getValue().setPromptText(t.getNewValue());
     	});
     	
     	columnToolTip.setCellFactory(TextFieldTableCell.forTableColumn());
     	columnToolTip.setOnEditCommit((CellEditEvent<Map.Entry<String, TextBlock>, String> t) -> {
             t.getTableView().getItems().get(t.getTablePosition().getRow())
-                    .getValue().setNewText(t.getNewValue());
+                    .getValue().setToolTip(t.getNewValue());
     	});
     	
     	// set CheckBox

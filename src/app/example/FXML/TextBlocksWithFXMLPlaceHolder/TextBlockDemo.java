@@ -13,16 +13,16 @@ public class TextBlockDemo extends Application {
 
     private Stage stage;
 
-//    public TextBlockDemo() {
-//		Platform.runLater(() -> {
-//			try {
-//				start(new Stage());
-//			} catch (IllegalAccessException | InstantiationException | IOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		});
-//	}
+    public TextBlockDemo() {
+		Platform.runLater(() -> {
+			try {
+				start(new Stage());
+			} catch (IllegalAccessException | InstantiationException | IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
+	}
     
     @Override
     public void start(Stage primaryStage) throws IOException, IllegalAccessException, InstantiationException {
