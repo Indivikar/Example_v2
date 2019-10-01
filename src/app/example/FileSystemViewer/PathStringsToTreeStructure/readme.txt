@@ -1,0 +1,3 @@
+- wird nur in der Konsole ausgegeben, gibt kein Fenster.
+- erstellt eine TreeView-Struktur aus einer Pfad-Liste
+- muss aber noch für JavaFX angepasst werden
